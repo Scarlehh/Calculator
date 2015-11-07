@@ -23,13 +23,20 @@ void push(Stack* this, double val) {
 }
 
 double pop(Stack* this) {
-	this->pointer--;
-	return this->my_stack[this->pointer];
+	if(this->pointer != 0) {
+		this->pointer--;
+		return this->my_stack[this->pointer];
+	}
+	return 0;
 }
 
 double peek(Stack* this) {
-	return this->my_stack[(this->pointer)-1];
+	if(this->pointer != 0) {
+		return this->my_stack[(this->pointer)-1];
+	}
+	return 0;
 }
+
 
 void add(Stack* this) {
 	double val2 = pop(this);
