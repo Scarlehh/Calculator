@@ -12,6 +12,11 @@ int tokenise(char str[], int start, char result[]) {
 		result[i] = str[start];
 	}
 	result[i] = 0;	
+
+	while(str[start] == ' ') {
+		start++;
+	}
+
 	if(str[start] == 0) {
 		return -1;
 	}
